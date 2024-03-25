@@ -1,0 +1,32 @@
+the use of digital signature  represents the natural progression of service dematerialization within companies . with remote work being widespread in this day and age and the increasing adoption of digital solutions , digital signatures have become a rising necessity for document authentication . in the same concept the use of electronic invoicing is now 
+a standard practice in the business world . in this vision of dematerialization , and enhancement of data precision , we aim to set up a
+digital signature system as well as an OCR software  to generate standardized  electronic invoices. 
+
+________________________________________________________________
+
+
+the main goal we want to achieve through this project is creating a innovative and efficient web application that will allow processing electronic documents together with a secure digital signature system. 
+the said application will aim to simplify and expedite the document management procedure within the company , while providing advanced 
+features for precessing , storage and electronic signature . 
+
+________________________________________________________________
+
+digital signature is an authentication procedure which garentees the integrity of an electronic document . It is mainly based on the use of asymmetric encryption techniques , such as RSA to link the author of a document to its content uniquely . when a doument is electronically signed , a digital fingerprint is generated from its content and encrypted with the signer's private key . the said fingerprint , once implemented in the document , can be verified by any entity using the public key to ensure
+that the document has not been altered and is indeed coming from the claimed person . 
+thus digital signature is a dependable document authentication method that esures their integrity in the digital world .
+
+__________________________________________________________________
+
+why RSA?
+it is a asymmetric encryption system created by Ron Rivest , adi shamir and leonard adleman. it is widely used due to its simplicity and efficiency. its functionality is based on a pair of keys : a public key which can be used by anyone to encrypt a message and a private key to decrypt that same message .thus the RSA algorithm ensures the authencity and integrity of an electronical document 
+among the numerous advantages of RSA
+security : the algorithm is hard to break if you dont have the private key 
+authentication: it allows the user to identify the sender 
+integrity: once signed , it is practically impossible to modify the content of the document without the attempt being detected . 
+interoperability: the algorithm is widely adopted and supported by numerous applications and communication protocols . 
+
+
+
+
+
+ 

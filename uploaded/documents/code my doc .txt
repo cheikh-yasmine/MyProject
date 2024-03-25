@@ -1,0 +1,180 @@
+<div class="container-26">
+    <img class="icon-button-6"  src="./../../assets/image/push.png" />
+    <hr class="container-26-child">
+
+    <hr class="container-26-item" > 
+    
+
+    <div class="shared-to">Shared to</div>
+    <div class="header-menu-2">
+      <div class="frame3">
+        <div class="details">Details</div>
+      </div>
+      <div class="frame4">
+        <div class="rectangle"></div>
+        <b class="activities">Activities</b>
+      </div>
+    </div>
+    <div class="owned-by">Owned by</div>
+    <div class="sarahdavisgmailcom">sarahdavis@gmail.com</div>
+    <div class="sophiawilsonyahoocomsigned">
+      sophiawilson@yahoo.comSigned
+    </div>
+    <div class="wkinghotmailcom">wking@hotmail.com</div>
+    <div class="sarahdavisgmailcom1">sarahdavis@gmail.com</div>
+    <div class="sophiawilsonyahoocomsigned1">
+      sophiawilson@yahoo.comSigned
+    </div>
+    <div class="tag">
+      <div class="frame5">
+        <div class="signed">Signed</div>
+      </div>
+    </div>
+    <div class="tag1">
+      <div class="frame5">
+        <div class="signed">Signed</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-menu-1">
+    <div class="frame7">
+      <b class="my-documents1">My documents</b>
+    </div>
+  </div>
+  <div class="container-25">
+ <hr class="container-25-child">
+    <div class="table-1">
+      <div class="row">
+        <div class="frame8"></div>
+        <div class="frame9"></div>
+        <div class="frame10"></div>
+        <div class="frame11"></div>
+        <div class="frame12"></div>
+        <div class="frame13"></div>
+        <div class="frame14"></div>
+      </div>
+      <div class="row1">
+        <div class="frame9">
+          <img class="pen-icon" alt="" src="./../../assets/image/logo.png" />
+        </div>
+        <div class="frame16">
+          <div class="purchase-agreement-pdf">Purchase Agreement .pdf</div>
+        </div>
+        <div class="frame14"></div>
+        <div class="frame18">
+          <div class="tag2">
+            <div class="frame19">
+              <div class="refused">Refused</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame12">
+          <div class="jun-23-2023">Jun 23, 2023</div>
+        </div>
+        <img class="frame-icon" alt="" src="./public/frame.svg" />
+
+        <div class="frame10">
+          <div class="mb">3.7 MB</div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="frame9">
+          <img class="pen-icon" alt="" src="./public/pen.svg" />
+        </div>
+        <div class="frame14"></div>
+        <div class="frame18">
+          <div class="tag2">
+            <div class="frame19">
+              <div class="refused">Refused</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame16">
+          <div class="amendment-agreementpdf">Amendment Agreement.pdf</div>
+        </div>
+        <img class="frame-icon" alt="" src="./public/frame.svg" />
+
+        <div class="frame10">
+          <div class="mb">7.1 MB</div>
+        </div>
+        <div class="frame12">
+          <div class="jun-23-2023">Jun 23, 2023</div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="frame29">
+          <div class="size">Size</div>
+        </div>
+        <div class="frame30">
+          <div class="name">Name</div>
+        </div>
+        <div class="frame31"></div>
+        <div class="frame32">
+          <div class="status">status</div>
+        </div>
+        <div class="frame33">
+          <div class="date">date</div>
+        </div>
+        <div class="frame34"></div>
+        <div class="frame35"></div>
+      </div>
+    </div>
+    <div class="dropdown-button-1">
+      <div class="upload">Upload</div>
+      <img class="move-up-icon" alt="" src="./public/move-up.svg" />
+    </div>
+  </div>
+  <div class="container-23">
+    <div class="sidebar-menu-3">
+      <div class="frame36">
+        <div class="refused-documents">Refused documents</div>
+        <img
+          class="chevron-right-large"
+          alt=""
+          src="./public/chevron-right-large.svg"
+        />
+      </div>
+      <div class="frame37">
+        <div class="signed-documents">Signed Documents</div>
+        <img
+          class="chevron-right-large"
+          alt=""
+          src="./public/chevron-right-large.svg"
+        />
+      </div>
+      <div class="frame38">
+        <div class="recents">Recents</div>
+        <img class="clock-icon" alt="" src="./public/clock.svg" />
+      </div>
+      <div class="frame39">
+        <div class="recents">All files</div>
+        <img class="clock-icon" alt="" src="./public/folder.svg" />
+
+        <img
+          class="chevron-down-large"
+          alt=""
+          src="./public/chevron-down-large.svg"
+        />
+      </div>
+      <div class="frame40">
+        <div class="refused-documents">New Documents</div>
+        <img
+          class="chevron-right-large"
+          alt=""
+          src="./public/chevron-right-large.svg"
+        />
+      </div>
+      <div class="frame41">
+        <div class="recents">Bin</div>
+        <img class="clock-icon" alt="" src="./public/trash.svg" />
+      </div>
+    </div>
+    <img class="container-23-child" alt="" src="./public/line-19.svg" />
+
+    <div class="sidebar-menu-2">
+      <div class="frame39">
+        <div class="recents">Log out</div>
+        <img class="clock-icon" alt="" src="./public/log-out.svg" />
+      </div>
+    </div>
+  </div>
