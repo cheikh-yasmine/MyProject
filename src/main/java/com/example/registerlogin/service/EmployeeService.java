@@ -9,5 +9,6 @@ import org.springframework.http.ResponseEntity;
 public interface EmployeeService {
     String addEmployee(EmployeeDTO employeeDTO);
     LoginResponse loginEmployee(LoginDTO loginDTO);
-    void deleteUser(Long employeeId);
+
+
 }
