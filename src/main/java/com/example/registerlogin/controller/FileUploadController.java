@@ -17,8 +17,9 @@ import java.io.IOException;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/uploads")
+@RequestMapping("/api/files")
 public class FileUploadController {
+
 
     private final FileUploadService fileUploadService;
 
@@ -28,7 +29,7 @@ public class FileUploadController {
         this.fileUploadService = fileUploadService;
 
     }
-    @PostMapping("/upload")
+    @PostMapping
     public ResponseEntity<FileUpload> uploadFile(
             @RequestParam("ownedBy") String ownedBy,
            @RequestParam("description") String description,
