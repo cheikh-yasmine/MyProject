@@ -2,6 +2,7 @@ package com.example.registerlogin.FileModel;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -10,9 +11,10 @@ import java.io.Serializable;
 @Entity
 @Table
 @Component
+@ConfigurationProperties(prefix = "file")
 public class FileUpload implements Serializable {
     @Id
-    @Column(name = "employee_id",length = 45)
+    @Column(name = "file_id",length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long fileId;
     @Column(name = "file_name", length = 255)

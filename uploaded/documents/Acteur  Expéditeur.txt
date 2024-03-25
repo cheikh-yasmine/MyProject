@@ -1,0 +1,79 @@
+Acteur : Expéditeur
+
+User Stories :
+
+1. Créer un compte ou se connecter
+
+En tant qu'expéditeur, je veux pouvoir créer un compte sur la plateforme pour pouvoir envoyer des documents à signer.
+En tant qu'expéditeur déjà inscrit, je veux pouvoir me connecter à mon compte en utilisant mon adresse e-mail et mon mot de passe.
+Pour plus de sécurité, je veux pouvoir utiliser une authentification à deux facteurs lors de la connexion.
+2. Télécharger un document
+
+En tant qu'expéditeur, je veux pouvoir télécharger un document PDF sur la plateforme, qu'il soit déjà signé ou non.
+Je veux pouvoir choisir le document à télécharger depuis mon ordinateur.
+La plateforme doit accepter les documents PDF de taille raisonnable.
+3. Signer le document (optionnel)
+
+Si le document n'est pas signé, je veux pouvoir le signer électroniquement avant de l'envoyer aux signataires.
+La plateforme doit me fournir une zone de signature dédiée dans le document PDF.
+Je veux pouvoir utiliser ma signature manuscrite ou saisir mon nom et prénom pour signer.
+4. Ajouter les signataires
+
+En tant qu'expéditeur, je veux pouvoir ajouter une ou plusieurs adresses e-mail des personnes qui doivent signer le document.
+Je veux pouvoir modifier la liste des signataires avant d'envoyer le document.
+5. Envoyer le document pour signature
+
+En tant qu'expéditeur, je veux pouvoir envoyer le document aux signataires pour qu'ils le signent électroniquement.
+La plateforme doit envoyer un e-mail à chaque signataire contenant un lien vers le document et un code de vérification.
+6. Suivre l'état du document
+
+En tant qu'expéditeur, je veux pouvoir suivre l'état du document (signé, refusé ou en attente) sur un tableau de bord.
+Le tableau de bord doit afficher l'historique des signatures et les informations des signataires.
+7. Recevoir une notification (optionnel)
+
+Si le document est signé par tous les signataires, je veux recevoir une notification par e-mail.
+8. Télécharger le document signé
+
+En tant qu'expéditeur, je veux pouvoir télécharger la version PDF signée du document une fois que tous les signataires ont terminé le processus.
+Le document signé doit contenir les signatures de tous les signataires.
+9. Gérer les paramètres du compte
+
+En tant qu'expéditeur, je veux pouvoir modifier mes informations personnelles, mon mot de passe et les préférences de notification.
+10. Recevoir une notification de refus (optionnel)
+
+Si un signataire refuse de signer le document, je veux recevoir une notification par e-mail.
+
+Acteur : Signataire
+
+User Stories :
+
+1. Recevoir une notification par e-mail
+
+En tant que signataire, je veux recevoir un e-mail contenant un lien vers le document à signer et un code de vérification.
+L'e-mail doit clairement identifier l'expéditeur du document et le but de la signature.
+2. Saisir le code de vérification
+
+En tant que signataire, je veux pouvoir saisir le code de vérification reçu par e-mail pour accéder au document à signer.
+La plateforme doit me fournir un champ pour saisir le code de vérification.
+Le code de vérification doit garantir la sécurité et la confidentialité du processus de signature.
+3. Examiner le document
+
+En tant que signataire, je veux pouvoir examiner le document PDF avant de le signer.
+Je veux pouvoir lire l'intégralité du document et comprendre son contenu.
+Je veux pouvoir zoomer et naviguer dans le document.
+4. Décider de signer ou de refuser
+
+En tant que signataire, je veux pouvoir choisir de signer ou de refuser le document après l'avoir examiné.
+La plateforme doit me fournir des boutons clairs et explicites pour signer ou refuser le document.
+5. Signer le document (optionnel)
+
+Si je décide de signer le document, je veux pouvoir le faire électroniquement.
+La plateforme doit me fournir une zone de signature dédiée dans le document PDF.
+Je veux pouvoir utiliser ma signature manuscrite ou saisir mon nom et prénom pour signer.
+6. Envoyer le document signé (optionnel)
+
+Si je signe le document, je veux qu'il soit automatiquement envoyé à l'expéditeur.
+La plateforme doit me fournir une confirmation de l'envoi du document signé.
+7. Recevoir une confirmation (optionnel)
+
+Si je refuse de signer le document, je veux recevoir une confirmation de mon refus par e-mail.

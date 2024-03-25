@@ -56,6 +56,7 @@ public class FileUploadService  {
         theFile.setType(file.getContentType());
         theFile.setName(originalFileName);
         theFile.setFile(file.getBytes());
+        theFile.setUploadDir(String.valueOf(this.uploadLocation));
         return fileUploadRepository.save(theFile) ;
 
 
