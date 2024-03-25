@@ -36,7 +36,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return employee.getEmployeeName();
     }
+    @Override
+    public void deleteUser(Long employeeId) {
 
+        EmployeeRepository.deleteById(employeeId);   }
     @Override
     public LoginResponse loginEmployee(LoginDTO loginDTO) {
         String msg = "";
