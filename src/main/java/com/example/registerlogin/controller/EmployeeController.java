@@ -28,9 +28,5 @@ public class EmployeeController {
         LoginResponse loginResponse= employeeService.loginEmployee(loginDTO);
         return ResponseEntity.ok(loginResponse);
     }
-    @DeleteMapping(value = "/delete/{id}")
-    public void deleteUser(@PathVariable Long employeeId)
-    {
-        EmployeeService.deleteUser(employeeId);
-    }
+
 }
