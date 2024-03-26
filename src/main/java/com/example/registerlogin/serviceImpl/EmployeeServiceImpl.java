@@ -36,6 +36,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return employee.getEmployeeName();
     }
+    @Override
+    public String deleteEmployeeById(Integer id) {
+        Optional<Employee> employee = employeeRepository.findById(id);
+        if (employee.isPresent()) {
+            employeeRepository.delete(employee.get());
+            return "Employee deleted successfully";
+        } else {
+            return "Employee with ID " + id + " not found";
+        }
+    }
 
     @Override
     public LoginResponse loginEmployee(LoginDTO loginDTO) {
