@@ -1,4 +1,4 @@
-package com.example.registerlogin.CorsFilter;
+package com.example.registerlogin.CORS;
 import java.io.IOException;
 
 

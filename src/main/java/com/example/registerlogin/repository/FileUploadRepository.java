@@ -1,6 +1,6 @@
 package com.example.registerlogin.repository;
 
-import com.example.registerlogin.FileModel.FileUpload;
+import com.example.registerlogin.entity.FileUpload;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

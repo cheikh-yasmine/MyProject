@@ -1,4 +1,4 @@
-package com.example.registerlogin.config;
+package com.example.registerlogin.CORS;
 
 import jakarta.servlet.Filter;
 import org.apache.catalina.filters.CorsFilter;

@@ -1,4 +1,4 @@
-package com.example.registerlogin.FileModel;
+package com.example.registerlogin.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -2,6 +2,7 @@ package com.example.registerlogin.controller;
 
 import com.example.registerlogin.dto.EmployeeDTO;
 import com.example.registerlogin.dto.LoginDTO;
+import com.example.registerlogin.entity.Employee;
 import com.example.registerlogin.response.LoginResponse;
 import com.example.registerlogin.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1/employee")
 public class EmployeeController {
 
+
     @Autowired
     private EmployeeService employeeService;
+
 
     @PostMapping(path = "/save")
     public String saveEmployee(@RequestBody EmployeeDTO employeeDto){
@@ -28,6 +31,12 @@ public class EmployeeController {
     public ResponseEntity<String> deleteEmployeeById(@PathVariable Integer id) {
         String message = employeeService.deleteEmployeeById(id);
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/updateEmployee/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id, @RequestBody Employee updatedEmployeeDetails) {
+        Employee updatedEmployee = employeeService.updateEmployee(id, updatedEmployeeDetails);
+        return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
     @PostMapping(path = "/login")
     public ResponseEntity<?> loginEmployee(@RequestBody LoginDTO loginDTO){

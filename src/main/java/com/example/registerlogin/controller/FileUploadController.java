@@ -1,11 +1,9 @@
 package com.example.registerlogin.controller;
 
 
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.registerlogin.FileModel.FileUpload;
+import com.example.registerlogin.entity.FileUpload;
 import com.example.registerlogin.service.FileUploadService;
 
 import org.springframework.http.HttpStatus;

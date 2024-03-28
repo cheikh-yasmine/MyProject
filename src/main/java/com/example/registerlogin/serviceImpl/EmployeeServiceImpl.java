@@ -3,6 +3,7 @@ package com.example.registerlogin.serviceImpl;
 import com.example.registerlogin.dto.EmployeeDTO;
 import com.example.registerlogin.dto.LoginDTO;
 import com.example.registerlogin.entity.Employee;
+import com.example.registerlogin.exception.EmployeeNotFoundException;
 import com.example.registerlogin.repository.EmployeeRepository;
 import com.example.registerlogin.response.LoginResponse;
 import com.example.registerlogin.service.EmployeeService;
@@ -46,6 +47,22 @@ public class EmployeeServiceImpl implements EmployeeService {
             return "Employee with ID " + id + " not found";
         }
     }
+    @Override
+    public Employee updateEmployee(Integer employeeId, Employee updatedEmployeeDetails) {
+        // Retrieve the existing employee
+        Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
+
+        // Update the properties of the existing employee
+        existingEmployee.setEmployeeName(updatedEmployeeDetails.getEmployeeName());
+        existingEmployee.setLastName(updatedEmployeeDetails.getLastName());
+        existingEmployee.setEmail(updatedEmployeeDetails.getEmail());
+        existingEmployee.setPassword(updatedEmployeeDetails.getPassword());
+        existingEmployee.setCompanyName(updatedEmployeeDetails.getCompanyName());
+
+        // Save the updated employee and return it
+        return employeeRepository.save(existingEmployee);
+    }
+
 
     @Override
     public LoginResponse loginEmployee(LoginDTO loginDTO) {

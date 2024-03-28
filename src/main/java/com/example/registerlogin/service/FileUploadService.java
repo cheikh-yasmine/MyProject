@@ -2,7 +2,7 @@ package com.example.registerlogin.service;
 
 
 import org.springframework.core.env.Environment;
-import com.example.registerlogin.FileModel.FileUpload;
+import com.example.registerlogin.entity.FileUpload;
 import com.example.registerlogin.exception.FileStorageException;
 import com.example.registerlogin.repository.FileUploadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
