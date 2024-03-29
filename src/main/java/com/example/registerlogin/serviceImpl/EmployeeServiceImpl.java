@@ -1,7 +1,7 @@
 package com.example.registerlogin.serviceImpl;
 
-import com.example.registerlogin.dto.EmployeeDTO;
-import com.example.registerlogin.dto.LoginDTO;
+import com.example.registerlogin.DTOs.EmployeeDTO;
+import com.example.registerlogin.DTOs.LoginDTO;
 import com.example.registerlogin.entity.Employee;
 import com.example.registerlogin.exception.EmployeeNotFoundException;
 import com.example.registerlogin.repository.EmployeeRepository;
@@ -46,6 +46,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         } else {
             return "Employee with ID " + id + " not found";
         }
+    }
+    @Override
+    public Employee getById(Integer employeeId) {
+        return employeeRepository.findById(employeeId).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
     }
     @Override
     public Employee updateEmployee(Integer employeeId, Employee updatedEmployeeDetails) {

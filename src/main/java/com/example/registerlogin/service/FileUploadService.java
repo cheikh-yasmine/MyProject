@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,6 +22,8 @@ public class FileUploadService  {
     private final FileUploadRepository fileUploadRepository;
     private  FileUpload fileUpload ;
     private Path uploadLocation ;
+
+
     @Autowired
     public FileUploadService(FileUploadRepository fileUploadRepository, Environment environment) {
         this.fileUploadRepository = fileUploadRepository;
@@ -34,18 +37,7 @@ public class FileUploadService  {
         } catch (Exception ex) {
             throw new FileStorageException("Could not create directory", ex);
         }}
-//    @Autowired
-//    public FileUploadService(FileUploadRepository fileUploadRepository,
-//                             FileUpload fileUpload) {
-//        this.fileUploadRepository = fileUploadRepository;
-////        this.fileUpload = fileUpload;
-//        this.uploadLocation= Paths.get(fileUpload.getUploadDir());
-//        try {
-//            Files.createDirectories(this.uploadLocation);
-//        } catch(Exception ex){
-//            throw new FileStorageException("Could not create directory" , ex );
-//        }
-//    }
+
     public FileUpload uploadFile(String ownedBy, String description, MultipartFile file) throws IOException {
         String originalFileName= StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
         Path targetLocation = this.uploadLocation.resolve(originalFileName);
@@ -61,4 +53,35 @@ public class FileUploadService  {
 
 
     }
+
+/// In FileUploadService
+
+    public String deleteFileById(Long fileId) throws FileNotFoundException {
+        // Retrieve the file entity
+        FileUpload fileToDelete = fileUploadRepository.findById(fileId)
+                .orElseThrow(() -> new FileNotFoundException("File with ID " + fileId + " not found"));
+
+        // Construct the path to the physical file
+        Path filePath = uploadLocation.resolve(fileToDelete.getName());
+
+        try {
+            // Delete the physical file
+            Files.deleteIfExists(filePath);
+
+            // Delete the database record
+            fileUploadRepository.delete(fileToDelete);
+
+            return "File with ID " + fileId + " deleted successfully";
+
+        } catch (IOException e) {
+            // Handle any IOException, including FileNotFoundException
+            if (e instanceof FileNotFoundException) {
+                // Handle file not found specifically (optional)
+                throw new FileNotFoundException("File with ID " + fileId + " not found at specified path.");
+            } else {
+                throw new FileStorageException("Failed to delete file", e);
+            }
+        }
+    }
+
 }

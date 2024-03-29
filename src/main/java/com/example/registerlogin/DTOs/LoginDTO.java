@@ -1,4 +1,4 @@
-package com.example.registerlogin.dto;
+package com.example.registerlogin.DTOs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

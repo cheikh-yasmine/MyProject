@@ -1,6 +1,5 @@
-package com.example.registerlogin.dto;
+package com.example.registerlogin.DTOs;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 @Getter

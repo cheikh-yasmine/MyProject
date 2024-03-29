@@ -1,14 +1,14 @@
-package com.example.registerlogin.controller;
+package com.example.registerlogin.controllers;
 
-import com.example.registerlogin.dto.EmployeeDTO;
-import com.example.registerlogin.dto.LoginDTO;
+import com.example.registerlogin.DTOs.EmployeeDTO;
+import com.example.registerlogin.DTOs.LoginDTO;
 import com.example.registerlogin.entity.Employee;
+import com.example.registerlogin.exception.EmployeeNotFoundException;
 import com.example.registerlogin.response.LoginResponse;
 import com.example.registerlogin.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -32,7 +32,15 @@ public class EmployeeController {
         String message = employeeService.deleteEmployeeById(id);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
-
+    @GetMapping(value = "/getUserById/{id}")
+    public ResponseEntity<Employee> getUserById(@PathVariable Integer id) {
+        try {
+            Employee user = employeeService.getById(id);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (EmployeeNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
     @PutMapping(value = "/updateEmployee/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id, @RequestBody Employee updatedEmployeeDetails) {
         Employee updatedEmployee = employeeService.updateEmployee(id, updatedEmployeeDetails);
