@@ -7,7 +7,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeDTO {
+public class UserDTO {
     private int employeeId;
 
 

@@ -1,9 +1,9 @@
 package com.example.registerlogin.exception;
 
 
-    public class EmployeeNotFoundException extends RuntimeException {
+    public class UserNotFoundException extends RuntimeException {
 
-        public EmployeeNotFoundException(Integer employeeId) {
+        public UserNotFoundException(Integer employeeId) {
             super("Employee with ID " + employeeId + " not found");
         }
     }

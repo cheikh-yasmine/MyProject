@@ -1,12 +1,12 @@
 package com.example.registerlogin.serviceImpl;
 
-import com.example.registerlogin.DTOs.EmployeeDTO;
+import com.example.registerlogin.DTOs.UserDTO;
 import com.example.registerlogin.DTOs.LoginDTO;
-import com.example.registerlogin.entity.Employee;
-import com.example.registerlogin.exception.EmployeeNotFoundException;
-import com.example.registerlogin.repository.EmployeeRepository;
+import com.example.registerlogin.entity.User;
+import com.example.registerlogin.exception.UserNotFoundException;
+import com.example.registerlogin.repository.UserRepository;
 import com.example.registerlogin.response.LoginResponse;
-import com.example.registerlogin.service.EmployeeService;
+import com.example.registerlogin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,17 +14,17 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private UserRepository employeeRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public String addEmployee(EmployeeDTO employeeDTO) {
+    public String addEmployee(UserDTO employeeDTO) {
 
-        Employee employee = new Employee(
+        User employee = new User(
                 employeeDTO.getEmployeeId(),
                 employeeDTO.getEmployeeName(),
                 employeeDTO.getLastName(),
@@ -39,7 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     @Override
     public String deleteEmployeeById(Integer id) {
-        Optional<Employee> employee = employeeRepository.findById(id);
+        Optional<User> employee = employeeRepository.findById(id);
         if (employee.isPresent()) {
             employeeRepository.delete(employee.get());
             return "Employee deleted successfully";
@@ -48,13 +48,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
     @Override
-    public Employee getById(Integer employeeId) {
-        return employeeRepository.findById(employeeId).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
+    public User getById(Integer employeeId) {
+        return employeeRepository.findById(employeeId).orElseThrow(() -> new UserNotFoundException(employeeId));
     }
     @Override
-    public Employee updateEmployee(Integer employeeId, Employee updatedEmployeeDetails) {
+    public User updateEmployee(Integer employeeId, User updatedEmployeeDetails) {
         // Retrieve the existing employee
-        Employee existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() -> new EmployeeNotFoundException(employeeId));
+        User existingEmployee = employeeRepository.findById(employeeId).orElseThrow(() -> new UserNotFoundException(employeeId));
 
         // Update the properties of the existing employee
         existingEmployee.setEmployeeName(updatedEmployeeDetails.getEmployeeName());
@@ -71,13 +71,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public LoginResponse loginEmployee(LoginDTO loginDTO) {
         String msg = "";
-        Employee employee1 = employeeRepository.findByEmail(loginDTO.getEmail());
+        User employee1 = employeeRepository.findByEmail(loginDTO.getEmail());
         if (employee1 != null) {
             String password = loginDTO.getPassword();
             String encodedPassword = employee1.getPassword();
             Boolean isPwdRight = passwordEncoder.matches(password, encodedPassword);
             if (isPwdRight) {
-                Optional<Employee> employee = employeeRepository.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
+                Optional<User> employee = employeeRepository.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
                 if (employee.isPresent()) {
                     return new LoginResponse("Login Success ", true);
                 } else {

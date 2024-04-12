@@ -12,7 +12,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class Employee {
+public class User {
 
     @Id
     @Column(name = "employee_id",length = 45)

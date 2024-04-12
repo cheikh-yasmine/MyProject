@@ -1,11 +1,11 @@
 package com.example.registerlogin.controllers;
 
-import com.example.registerlogin.DTOs.EmployeeDTO;
+import com.example.registerlogin.DTOs.UserDTO;
 import com.example.registerlogin.DTOs.LoginDTO;
-import com.example.registerlogin.entity.Employee;
-import com.example.registerlogin.exception.EmployeeNotFoundException;
+import com.example.registerlogin.entity.User;
+import com.example.registerlogin.exception.UserNotFoundException;
 import com.example.registerlogin.response.LoginResponse;
-import com.example.registerlogin.service.EmployeeService;
+import com.example.registerlogin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +18,11 @@ public class EmployeeController {
 
 
     @Autowired
-    private EmployeeService employeeService;
+    private UserService employeeService;
 
 
     @PostMapping(path = "/save")
-    public String saveEmployee(@RequestBody EmployeeDTO employeeDto){
+    public String saveEmployee(@RequestBody UserDTO employeeDto){
         String id =employeeService.addEmployee(employeeDto);
         return id;
 
@@ -33,17 +33,17 @@ public class EmployeeController {
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
     @GetMapping(value = "/getUserById/{id}")
-    public ResponseEntity<Employee> getUserById(@PathVariable Integer id) {
+    public ResponseEntity<User> getUserById(@PathVariable Integer id) {
         try {
-            Employee user = employeeService.getById(id);
+            User user = employeeService.getById(id);
             return new ResponseEntity<>(user, HttpStatus.OK);
-        } catch (EmployeeNotFoundException e) {
+        } catch (UserNotFoundException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
     @PutMapping(value = "/updateEmployee/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Integer id, @RequestBody Employee updatedEmployeeDetails) {
-        Employee updatedEmployee = employeeService.updateEmployee(id, updatedEmployeeDetails);
+    public ResponseEntity<User> updateEmployee(@PathVariable Integer id, @RequestBody User updatedEmployeeDetails) {
+        User updatedEmployee = employeeService.updateEmployee(id, updatedEmployeeDetails);
         return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
     }
     @PostMapping(path = "/login")
@@ -51,5 +51,6 @@ public class EmployeeController {
         LoginResponse loginResponse= employeeService.loginEmployee(loginDTO);
         return ResponseEntity.ok(loginResponse);
     }
+
 
 }
